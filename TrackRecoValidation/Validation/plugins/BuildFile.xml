@@ -1,0 +1,11 @@
+<use name="FWCore/Framework"/>
+<use name="FWCore/PluginManager"/>
+<use name="FWCore/ParameterSet"/>
+<flags EDM_PLUGIN="1"/>
+#for Tracks
+<use name="DataFormats/TrackReco"/>
+#for TFileService
+<use name="CommonTools/UtilAlgos"/>
+#for TransientTrackingRecHitBuilder
+<use name="TrackingTools/Records"/>
+<use name="TrackingTools/TransientTrackingRecHit"/>
