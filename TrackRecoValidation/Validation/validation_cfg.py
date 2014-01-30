@@ -1,10 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-process = cms.Process("Demo")
+process = cms.Process("Validation")
 
 process.load("FWCore.MessageService.MessageLogger_cfi")
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(1))
 
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
@@ -12,7 +12,7 @@ process.source = cms.Source("PoolSource",
     )
 )
 
-process.demo = cms.EDAnalyzer('Validation', 
+process.validation = cms.EDAnalyzer('Validation', 
                tracks = cms.untracked.InputTag('generalTracks')
 )
 
@@ -20,4 +20,4 @@ process.TFileService = cms.Service("TFileService",
                fileName = cms.string('trackAnalysis.root')
 )
 
-process.p = cms.Path(process.demo)
+process.p = cms.Path(process.validation)
